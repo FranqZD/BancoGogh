@@ -79,16 +79,16 @@ public class BancoController : ControllerBase
     }
 
 [HttpPost]
-    public IActionResult GetById(Usuario u)
+    public IActionResult GetById(Cuenta u)
     {
-        var usuario = _ctx.Usuarios.FirstOrDefault(x => x.CurpUsr == u.CurpUsr && x.Contrasenia == u.Contrasenia);
+        var cuenta = _ctx.Cuentas.FirstOrDefault(x => x.nickname == u.nickname && x.password == u.password);
 
-        if (usuario == null)
+        if (cuenta == null)
         {
             return BadRequest(new { message = "CURP o contraseña incorrectos" });
         }
 
-        return Ok(usuario);
+        return Ok(cuenta);
     }
 
     [HttpGet]

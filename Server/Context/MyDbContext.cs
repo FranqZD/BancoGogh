@@ -12,7 +12,6 @@ public class MyDbContext : DbContext
     public DbSet<CategoriaDelPrestamo> CategoriaDelPrestamo { get; set; }
     // se pone las entidades en cada dbset
     public DbSet<Cuenta> Cuentas { set; get; }
-    public DbSet<DatosPersonales> DatosPersonales { get; set; }    
     public DbSet<Empleado> Empleados { get; set; }
     public DbSet<Estatus> Estatuses { get; set; }
     public DbSet<Historial> Historials { get; set; }

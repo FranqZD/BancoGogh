@@ -5,7 +5,7 @@
 namespace BancoGogh.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class InitialCreated : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -29,8 +29,10 @@ namespace BancoGogh.Server.Migrations
                 {
                     Id_Cuenta = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    nickname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Id_Datos = table.Column<int>(type: "int", nullable: false)
+                    Id_Usuario = table.Column<int>(type: "int", nullable: false),
+                    Id_Empleado = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -97,10 +99,15 @@ namespace BancoGogh.Server.Migrations
                 {
                     IdUsuario = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Contrasenia = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NombrePersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApPPersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApMPersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FeNacPersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CurpUsr = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SaldoUsr = table.Column<double>(type: "float", nullable: false),
-                    IdHistorial = table.Column<int>(type: "int", nullable: false)
+                    IdHistorial = table.Column<int>(type: "int", nullable: false),
+                    EstatusPrestamo = table.Column<int>(type: "int", nullable: false),
+                    FolioPrestamo = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -137,11 +144,17 @@ namespace BancoGogh.Server.Migrations
                 {
                     IdEmpleado = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    NombrePersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApPPersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ApMPersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FeNacPersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Nomina = table.Column<long>(type: "bigint", nullable: false),
                     Vac = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     FecInicio = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Puesto = table.Column<int>(type: "int", nullable: false),
-                    PuestoNavigationIdPuesto = table.Column<int>(type: "int", nullable: false)
+                    PuestoNavigationIdPuesto = table.Column<int>(type: "int", nullable: false),
+                    EstatusPrestamo = table.Column<int>(type: "int", nullable: false),
+                    FolioPrestamo = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -151,47 +164,6 @@ namespace BancoGogh.Server.Migrations
                         column: x => x.PuestoNavigationIdPuesto,
                         principalTable: "Puestos",
                         principalColumn: "IdPuesto",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DatosPersonales",
-                columns: table => new
-                {
-                    IdPersona = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    NombrePersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ApPPersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ApMPersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FeNacPersona = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EstatusPrestamo = table.Column<int>(type: "int", nullable: false),
-                    Empleado = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Usuarios = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Tipo = table.Column<int>(type: "int", nullable: false),
-                    EmpleadoNavigationIdEmpleado = table.Column<int>(type: "int", nullable: false),
-                    EstatusPrestamoNavigationIdEstado = table.Column<int>(type: "int", nullable: false),
-                    UsuariosNavigationIdUsuario = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DatosPersonales", x => x.IdPersona);
-                    table.ForeignKey(
-                        name: "FK_DatosPersonales_Empleados_EmpleadoNavigationIdEmpleado",
-                        column: x => x.EmpleadoNavigationIdEmpleado,
-                        principalTable: "Empleados",
-                        principalColumn: "IdEmpleado",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DatosPersonales_Estatuses_EstatusPrestamoNavigationIdEstado",
-                        column: x => x.EstatusPrestamoNavigationIdEstado,
-                        principalTable: "Estatuses",
-                        principalColumn: "IdEstado",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DatosPersonales_Usuarios_UsuariosNavigationIdUsuario",
-                        column: x => x.UsuariosNavigationIdUsuario,
-                        principalTable: "Usuarios",
-                        principalColumn: "IdUsuario",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -226,21 +198,6 @@ namespace BancoGogh.Server.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_DatosPersonales_EmpleadoNavigationIdEmpleado",
-                table: "DatosPersonales",
-                column: "EmpleadoNavigationIdEmpleado");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DatosPersonales_EstatusPrestamoNavigationIdEstado",
-                table: "DatosPersonales",
-                column: "EstatusPrestamoNavigationIdEstado");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DatosPersonales_UsuariosNavigationIdUsuario",
-                table: "DatosPersonales",
-                column: "UsuariosNavigationIdUsuario");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Empleados_PuestoNavigationIdPuesto",
                 table: "Empleados",
                 column: "PuestoNavigationIdPuesto");
@@ -268,7 +225,7 @@ namespace BancoGogh.Server.Migrations
                 name: "Cuentas");
 
             migrationBuilder.DropTable(
-                name: "DatosPersonales");
+                name: "Estatuses");
 
             migrationBuilder.DropTable(
                 name: "Historials");
@@ -278,9 +235,6 @@ namespace BancoGogh.Server.Migrations
 
             migrationBuilder.DropTable(
                 name: "Rifas");
-
-            migrationBuilder.DropTable(
-                name: "Estatuses");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
