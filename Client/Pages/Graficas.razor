@@ -1,0 +1,24 @@
+@page "/graficas"
+
+
+
+<PageTitle>Historial Pagos</PageTitle>
+
+<canvas id="myChart"></canvas>
+
+@code {
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var labels = new[] { "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+            var data = new[] { 5000, 6500, 6000, 6000, 5500, 7500, 600 };
+            await JSRuntime.InvokeVoidAsync("drawChart", labels, data);
+        }
+    }
+}
+
+  

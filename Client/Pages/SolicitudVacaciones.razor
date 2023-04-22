@@ -1,0 +1,70 @@
+@page  "/SolicitudVacaciones"
+
+<PageTitle>Solicitud de Vacaciones</PageTitle>
+<h1>Solicitud de Vacaciones</h1>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seleccionar Fechas</title>
+
+    <!-- Enlazar Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- Estilos personalizados -->
+    <style>
+      .container {
+        margin-top: 50px;
+      }
+      .form-group.required .control-label:after {
+        content: " *";
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Seleccionar Fechas</h1>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6 required">
+            <label for="startDate">Fecha de Inicio</label>
+            <input
+              type="date"
+              class="form-control"
+              id="startDate"
+              name="startDate"
+              min="{{ date('Y-m-d') }}"
+              onchange="resetEndDate()"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6 required">
+            <label for="endDate">Fecha de Fin</label>
+            <input
+              type="date"
+              class="form-control"
+              id="endDate"
+              name="endDate"
+              min="{{ date('Y-m-d', strtotime('+1 day')) }}"
+              max="{{ date('Y-m-d', strtotime('+4 days')) }}"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Enlazar Bootstrap JS y dependencias -->
+
+  </body>

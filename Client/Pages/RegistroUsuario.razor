@@ -1,0 +1,73 @@
+@page "/RegistroUsr"
+@using BancoGogh.Shared.Models
+@inject HttpClient Http
+<PageTitle>RegistroUsr</PageTitle>
+
+<h1>Inicio de Sesion</h1>
+
+Bienvenido
+
+  @* <div class="mb-3">
+    <label for="nombre">Nombre:</label>
+    <input class="form-control" type="text" id="nombre" name="nombre" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" required />
+    <div id="NombreHelp" class="form-text">
+    El nombre no deberá contener numeros.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="apellido">Apellido:</label>
+    <input class="form-control" type="text" id="apellido" name="apellido" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" required />
+    <div id="ApellidoHelp" class="form-text">
+    El Apellido no deberá contener numeros.
+    </div>
+  </div>
+  <div class="mb-3"> 
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input class="form-control" type="date" id="fechaNacimiento" name="fechaNacimiento" max="2005-12-31" required />
+    <div id="ApellidoHelp" class="form-text">
+    La fecha de nacimiento no puede ser antes de 1962.
+    </div>
+  </div> *@
+<EditForm Model="@usuario" OnValidSubmit="Save">
+  <div class="mb-3 ">
+    <label for="curp">CURP:</label>
+    <InputText @bind-Value="usuario.CurpUsr" class="form-control" required />
+  </div>
+  <div class="mb-3 ">
+    <label for="contraseña">Contraseña:</label>
+    <InputText @bind-Value="usuario.Contrasenia" class="form-control" required />
+  </div>
+  <div class="mb-3 ">
+    <label for="saldo">Saldo:</label>
+    <InputNumber @bind-Value="usuario.SaldoUsr" class="form-control" required />
+  </div>
+  <div class="mb-3 ">
+    <label for="idHistorial">ID Historial:</label>
+    <InputNumber @bind-Value="usuario.IdHistorial" class="form-control"  required />
+  </div>
+  <div class="py-2 @messageClass">
+                @status.Message
+            </div>
+  <button class="btn btn-outline-primary" type="submit">Registrar</button>
+</EditForm>
+
+
+@code
+{
+  [Parameter]
+  public int Id {get;set;}
+  private string messageClass = "";
+  Usuario usuario = new();
+  Status status = new();
+
+  
+  private async Task Save(){
+    status.StatusCode=0;
+    status.Message= "Esperanding....";
+    var response = await Http.PostAsJsonAsync("api/Banco/AddUpdate",usuario);
+     status = await response.Content.ReadFromJsonAsync<Status>();
+        messageClass = status.StatusCode == 1 ? "text-success" : "text-danger"; 
+  }
+
+  
+}

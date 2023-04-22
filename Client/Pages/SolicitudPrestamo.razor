@@ -1,0 +1,53 @@
+@page "/solicitud-prestamo"
+@page "/solicitud-prestamo/{idUsr:int}/{idEmp:int}"
+@using BancoGogh.Shared.Models
+@inject HttpClient Http
+
+
+<PageTitle>Solicitud de Préstamo</PageTitle>
+
+<h1>Solicitud de Préstamo</h1>
+
+
+<EditForm Model="@prestamo" OnValidSubmit="Save">
+  <div class="mb-3">
+    <label for="cantidad">Cantidad solicitada</label>
+    <InputNumber @bind-Value="prestamo.CantidadPrestamo" class="form-control" 
+       min="1" required></InputNumber>
+    <small class="form-text text-muted">La cantidad solicitada debe ser mayor a cero.</small>
+  </div>
+  <div class="mb-3">
+    <label for="plazo">Plazo</label>
+    <InputNumber @bind-Value="@prestamo.CantidadPrestamo"  class="form-control" min="1" required></InputNumber>
+  </div>
+  <div>
+    <InputNumber @bind-Value="@prestamo.Plazos" class="form-control" id="plazo" name="plazo" required></InputNumber>
+
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int idUsr { get; set; }
+    
+    [Parameter]
+    public int idEmp { get; set; }
+    
+
+  private string messageClass = "";
+  Prestamo prestamo = new();
+  Status status = new();
+  private async Task Save(){
+     status.StatusCode=0;
+     prestamo.IdUsuario=idUsr;
+     prestamo.IdEmpleado=idEmp;
+     prestamo.FecSolicitudPrestamo=DateTime.Now.ToString(("dd/MM/yyyy"));
+     prestamo.FecAprobacionPrestamo=DateTime.Now.ToString(("dd/MM/yyyy"));
+    var response = await Http.PostAsJsonAsync("api/Banco/AddPrestamo",prestamo);
+     status = await response.Content.ReadFromJsonAsync<Status>();
+        messageClass = status.StatusCode == 1 ? "text-success" : "text-danger"; 
+  }
+  
+  }
+

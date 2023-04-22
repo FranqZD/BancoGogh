@@ -1,0 +1,114 @@
+@page "/Login"
+@inject HttpClient http
+@using BancoGogh.Shared.Models
+@using Microsoft.AspNetCore.Components.Forms
+
+
+<PageTitle>Login</PageTitle>
+
+<h1>Inicio de Sesion</h1>
+
+ <style>
+    body {
+      background-color: #f7f7f7;
+    }
+
+    .card {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      background-color: #fff;
+      -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+      border-bottom: none;
+    }
+
+    .card-body {
+      padding: 40px;
+    }
+
+    .form-control {
+      border-radius: 20px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .btn-primary:hover {
+      background-color: #0069d9;
+      border-color: #0062cc;
+    }
+
+    .form-control:focus {
+      box-shadow: none;
+    }
+
+    .form-control::placeholder {
+      color: #9ea4ae;
+      font-style: italic;
+    }
+
+    .form-group {
+      margin-bottom: 30px;
+    }
+  </style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Login
+                </div>
+                <div class="card-body">
+                    <EditForm Model="@usuario" OnValidSubmit="@HandleSubmit">
+                        <div class="form-group mb-3">
+                            <label for="username">Username</label>
+                            <InputText type="text" class="form-control" id="username" placeholder="Enter username" @bind-Value="@username" required />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="password">Password</label>
+                            <InputText type="password" class="form-control" id="password" placeholder="Enter password" @bind-Value="@password" required />
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string username;
+    private string password;
+
+    Usuario usuario = new();
+private async Task HandleSubmit()
+{
+  Console.WriteLine(username);
+  Console.WriteLine(password);
+    try
+    {
+        usuario = await http.GetFromJsonAsync<Usuario>($"api/Banco/GetById/{username}/{password}");
+    }
+    catch (Exception ex)
+    {
+        // Manejar la excepción y mostrar un mensaje de error al usuario
+        Console.WriteLine($"Error al obtener el usuario: {ex.Message}");
+    }
+}
+
+  
+}

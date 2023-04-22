@@ -1,0 +1,40 @@
+@page "/RegistroEmp"
+
+<PageTitle>RegistroEmpleado</PageTitle>
+<h1>Registro Empelado</h1>
+
+<form>
+  <div class="mb-3">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" required />
+    <div id="NombreHelp" class="form-text">
+    El nombre no deberá contener numeros.
+    </div>
+
+  </div>
+  <div class="mb-3">
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellido" name="apellido" pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+" required />
+    <div id="ApellidoHelp" class="form-text">
+    El Apellido no deberá contener numeros.
+    </div>
+
+  </div>
+  <div class="mb-3"> 
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fechaNacimiento" name="fechaNacimiento" max="2005-12-31" required />
+    <div id="FechaHelp" class="form-text">
+    La fecha no es valida
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="Nomina">Nomina:</label>
+    <input type="text" id="Nomina" name="Nomina" pattern="[0-9]{9}" required />
+    <div id="Nomina" class="form-text">
+    La nomina solo puede contener numeros
+    </div>
+  </div>
+
+  <button type="submit">Registrar</button>
+</form>
