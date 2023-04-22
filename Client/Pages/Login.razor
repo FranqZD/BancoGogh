@@ -2,6 +2,10 @@
 @inject HttpClient http
 @using BancoGogh.Shared.Models
 @using Microsoft.AspNetCore.Components.Forms
+@using System.Net.Http.Json
+
+@inject NavigationManager NavigationManager
+
 
 
 <PageTitle>Login</PageTitle>
@@ -76,11 +80,11 @@
                     <EditForm Model="@usuario" OnValidSubmit="@HandleSubmit">
                         <div class="form-group mb-3">
                             <label for="username">Username</label>
-                            <InputText type="text" class="form-control" id="username" placeholder="Enter username" @bind-Value="@username" required />
+                            <InputText type="text" class="form-control" id="CurpUsr" placeholder="Enter username" @bind-Value="@usuario.CurpUsr" required />
                         </div>
                         <div class="form-group mb-3">
                             <label for="password">Password</label>
-                            <InputText type="password" class="form-control" id="password" placeholder="Enter password" @bind-Value="@password" required />
+                            <InputText type="password" class="form-control" id="Contrasenia" placeholder="Enter password" @bind-Value="@usuario.Contrasenia" required />
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </EditForm>
@@ -91,22 +95,21 @@
 </div>
 
 @code {
-    private string username;
-    private string password;
-
-    Usuario usuario = new();
+    private Usuario usuario {get;set;} = new();
 private async Task HandleSubmit()
 {
-  Console.WriteLine(username);
-  Console.WriteLine(password);
-    try
+  Console.WriteLine(usuario.CurpUsr);
+  Console.WriteLine(usuario.Contrasenia);
+   
+    var response = await http.PostAsJsonAsync("api/Banco/GetById", usuario);
+    if (response.IsSuccessStatusCode)
     {
-        usuario = await http.GetFromJsonAsync<Usuario>($"api/Banco/GetById/{username}/{password}");
+        usuario = await response.Content.ReadFromJsonAsync<Usuario>();
+        NavigationManager.NavigateTo("/rifa");
     }
-    catch (Exception ex)
+    else
     {
-        // Manejar la excepción y mostrar un mensaje de error al usuario
-        Console.WriteLine($"Error al obtener el usuario: {ex.Message}");
+        Console.WriteLine("No jala ue");
     }
 }
 

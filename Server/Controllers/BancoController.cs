@@ -78,18 +78,17 @@ public class BancoController : ControllerBase
         return Ok(status);
     }
 
-    [HttpGet]
-    public IActionResult GetById(string CurpUsr,string pass)
+[HttpPost]
+    public IActionResult GetById(Usuario u)
     {
-        var data = _ctx.Usuarios.FirstOrDefault(u => u.CurpUsr == CurpUsr && u.Contrasenia == pass);
-    if (data != null)
-    {
-        return RedirectToPage("/Rifa");
-    }
-    else
-    {
-        return BadRequest("Usuario o contraseña incorrectos");
-    }
+        var usuario = _ctx.Usuarios.FirstOrDefault(x => x.CurpUsr == u.CurpUsr && x.Contrasenia == u.Contrasenia);
+
+        if (usuario == null)
+        {
+            return BadRequest(new { message = "CURP o contraseña incorrectos" });
+        }
+
+        return Ok(usuario);
     }
 
     [HttpGet]
