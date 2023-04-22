@@ -1,9 +1,11 @@
 @page "/RegistroUsr"
 @using BancoGogh.Shared.Models
 @inject HttpClient Http
+@using System.Globalization
+@inject NavigationManager NavigationManager
 <PageTitle>RegistroUsr</PageTitle>
 
-<h1>Inicio de Sesion</h1>
+<h1>Registro</h1>
 
 Bienvenido
 
@@ -30,18 +32,26 @@ Bienvenido
   </div> *@
 <EditForm Model="@usuario" OnValidSubmit="Save">
   <div class="mb-3 ">
+    <label for="Nombre">Nombre:</label>
+    <InputText @bind-Value="usuario.NombrePersona" class="form-control" required />
+  </div>
+  <div class="mb-3 ">
+    <label for="ApP">Apellido Paterno:</label>
+    <InputText @bind-Value="usuario.ApPPersona" class="form-control" required />
+  </div>
+  <div class="mb-3 ">
+    <label for="ApM">Apellido Materno:</label>
+    <InputText @bind-Value="usuario.ApMPersona" class="form-control" required />
+  </div>
+<div class="mb-3 ">
+  <label for="FeNac">Fecha de Nacimiento:</label>
+  <InputText @bind-Value="usuario.FeNacPersona" class="form-control" required pattern="\d{2}/\d{2}/\d{4}" />
+</div>
+  <div class="mb-3 ">
     <label for="curp">CURP:</label>
     <InputText @bind-Value="usuario.CurpUsr" class="form-control" required />
   </div>
 
-  <div class="mb-3 ">
-    <label for="saldo">Saldo:</label>
-    <InputNumber @bind-Value="usuario.SaldoUsr" class="form-control" required />
-  </div>
-  <div class="mb-3 ">
-    <label for="idHistorial">ID Historial:</label>
-    <InputNumber @bind-Value="usuario.IdHistorial" class="form-control"  required />
-  </div>
   <div class="py-2 @messageClass">
                 @status.Message
             </div>
@@ -51,19 +61,100 @@ Bienvenido
 
 @code
 {
-  [Parameter]
-  public int Id {get;set;}
+  bool curpValido = false;
   private string messageClass = "";
   Usuario usuario = new();
   Status status = new();
+  Cuenta cuentaNueva = new();
 
-  
+public bool VerificarCURP(string nombre, string apellidoPaterno, string apellidoMaterno, string fechaNacimiento, string curp)
+{
+  try{
+    if(curp.Length!=18){
+      return false;
+    }
+    // Obtener las primeras letras de los apellidos y el nombre
+    string apellido1 = apellidoPaterno.Substring(0, 1);Console.WriteLine(apellido1);
+    string vocal1 = ObtenerVocalInterna(apellidoPaterno.ToUpper());Console.WriteLine(vocal1);
+    string apellido2 = apellidoMaterno.Substring(0, 1);Console.WriteLine(apellido2);
+    string nombre1 = nombre.Substring(0, 1);Console.WriteLine(nombre1);
+
+    // Obtener el año, mes y día de la fecha de nacimiento
+    DateTime fecha = DateTime.ParseExact(fechaNacimiento, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+    string anio = fecha.Year.ToString().Substring(2);
+    string mes = fecha.Month.ToString().PadLeft(2, '0');
+    string dia = fecha.Day.ToString().PadLeft(2, '0');
+
+    // Concatenar todos los elementos de la CURP
+    string curpCalculado = $"{apellido1}{vocal1}{apellido2}{nombre1}{anio}{mes}{dia}";
+  Console.WriteLine(curpCalculado);
+    // Comparar la CURP calculada con la recibida
+    int i = 0;
+    do{
+      if(curp[i]!=curpCalculado[i]){
+        return false;
+      }
+      i++;
+    }while(i<curpCalculado.Length);
+    return true;
+  }catch(Exception e){
+    return false;
+  }
+}
+
+private string ObtenerVocalInterna(string palabra)
+{
+    // Obtener la vocal interna de una palabra
+
+    for (int i = 0; i < palabra.Length; i++)
+    {
+        if (palabra[i]=='A'||palabra[i]=='E'||palabra[i]=='I'||palabra[i]=='U')
+        {
+          Console.WriteLine(palabra[i]);
+            return palabra[i].ToString();
+        }
+    }
+    return "X"; // Si no hay vocal interna, se utiliza X
+}
+
+public static string GenerateUsername(string firstName, string lastName, string dateOfBirthString)
+{
+
+    DateTime dateOfBirth = DateTime.ParseExact(dateOfBirthString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+    
+
+    string username = $"{firstName[0]}{lastName}{dateOfBirth.Year}";
+    
+    return username.ToLower(); // convert to lowercase for consistency
+}
+
+public static string GeneratePassword(string firstName, string lastName, string dateOfBirthString)
+{
+    DateTime dateOfBirth = DateTime.ParseExact(dateOfBirthString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+    
+    string password = $"{firstName.Substring(0, 2)}{lastName.Substring(lastName.Length - 2, 2)}{dateOfBirth.Day}";
+    
+    return password.ToLower(); // convert to lowercase for consistency
+}
+
   private async Task Save(){
     status.StatusCode=0;
-    status.Message= "Esperanding....";
+    Console.WriteLine(VerificarCURP(usuario.NombrePersona,usuario.ApPPersona,usuario.ApMPersona,usuario.FeNacPersona,usuario.CurpUsr));
+    if(VerificarCURP(usuario.NombrePersona,usuario.ApPPersona,usuario.ApMPersona,usuario.FeNacPersona,usuario.CurpUsr)){
+      status.Message= "Esperanding....";
+cuentaNueva.nickname = GenerateUsername(usuario.NombrePersona,usuario.ApPPersona,usuario.FeNacPersona);
+    cuentaNueva.password = GeneratePassword(usuario.NombrePersona,usuario.ApPPersona,usuario.FeNacPersona);
+    cuentaNueva.Id_Usuario=1;
+        var cuenta = await Http.PostAsJsonAsync("api/Banco/AddCuenta",cuentaNueva);
     var response = await Http.PostAsJsonAsync("api/Banco/AddUpdate",usuario);
      status = await response.Content.ReadFromJsonAsync<Status>();
+       var cuentaStatus = await cuenta.Content.ReadFromJsonAsync<Status>();
         messageClass = status.StatusCode == 1 ? "text-success" : "text-danger"; 
+        NavigationManager.NavigateTo("/Login"); 
+    }else{
+    status.Message= "Curp Erroneo";
+    }
+    
   }
 
   
