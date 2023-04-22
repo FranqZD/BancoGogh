@@ -231,80 +231,6 @@
         }
       },
       {
-        "HashCode": 706844167,
-        "Kind": "Components.Component",
-        "Name": "BancoGogh.Client.Pages.IndexChido",
-        "AssemblyName": "BancoGogh.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "IndexChido"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BancoGogh.Client.Pages.IndexChido",
-          "Common.TypeNamespace": "BancoGogh.Client.Pages",
-          "Common.TypeNameIdentifier": "IndexChido"
-        }
-      },
-      {
-        "HashCode": -910379381,
-        "Kind": "Components.Component",
-        "Name": "BancoGogh.Client.Pages.IndexChido",
-        "AssemblyName": "BancoGogh.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "BancoGogh.Client.Pages.IndexChido"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BancoGogh.Client.Pages.IndexChido",
-          "Common.TypeNamespace": "BancoGogh.Client.Pages",
-          "Common.TypeNameIdentifier": "IndexChido",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": -687500503,
-        "Kind": "Components.Component",
-        "Name": "BancoGogh.Client.Pages.Login",
-        "AssemblyName": "BancoGogh.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Login"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BancoGogh.Client.Pages.Login",
-          "Common.TypeNamespace": "BancoGogh.Client.Pages",
-          "Common.TypeNameIdentifier": "Login"
-        }
-      },
-      {
-        "HashCode": -1474029380,
-        "Kind": "Components.Component",
-        "Name": "BancoGogh.Client.Pages.Login",
-        "AssemblyName": "BancoGogh.Client",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "BancoGogh.Client.Pages.Login"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BancoGogh.Client.Pages.Login",
-          "Common.TypeNamespace": "BancoGogh.Client.Pages",
-          "Common.TypeNameIdentifier": "Login",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 281762460,
         "Kind": "Components.Component",
         "Name": "BancoGogh.Client.Pages.Prestamos",
@@ -490,6 +416,43 @@
         }
       },
       {
+        "HashCode": -467959180,
+        "Kind": "Components.Component",
+        "Name": "BancoGogh.Client.Pages.SolicitudVacaciones",
+        "AssemblyName": "BancoGogh.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SolicitudVacaciones"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BancoGogh.Client.Pages.SolicitudVacaciones",
+          "Common.TypeNamespace": "BancoGogh.Client.Pages",
+          "Common.TypeNameIdentifier": "SolicitudVacaciones"
+        }
+      },
+      {
+        "HashCode": -1146068595,
+        "Kind": "Components.Component",
+        "Name": "BancoGogh.Client.Pages.SolicitudVacaciones",
+        "AssemblyName": "BancoGogh.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BancoGogh.Client.Pages.SolicitudVacaciones"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BancoGogh.Client.Pages.SolicitudVacaciones",
+          "Common.TypeNamespace": "BancoGogh.Client.Pages",
+          "Common.TypeNameIdentifier": "SolicitudVacaciones",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": 1338326806,
         "Kind": "Components.Component",
         "Name": "BancoGogh.Client.Pages.SolicitudPrestamo",
@@ -567,39 +530,39 @@
         }
       },
       {
-        "HashCode": -467959180,
+        "HashCode": 706844167,
         "Kind": "Components.Component",
-        "Name": "BancoGogh.Client.Pages.SolicitudVacaciones",
+        "Name": "BancoGogh.Client.Pages.IndexChido",
         "AssemblyName": "BancoGogh.Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "SolicitudVacaciones"
+            "TagName": "IndexChido"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BancoGogh.Client.Pages.SolicitudVacaciones",
+          "Common.TypeName": "BancoGogh.Client.Pages.IndexChido",
           "Common.TypeNamespace": "BancoGogh.Client.Pages",
-          "Common.TypeNameIdentifier": "SolicitudVacaciones"
+          "Common.TypeNameIdentifier": "IndexChido"
         }
       },
       {
-        "HashCode": -1146068595,
+        "HashCode": -910379381,
         "Kind": "Components.Component",
-        "Name": "BancoGogh.Client.Pages.SolicitudVacaciones",
+        "Name": "BancoGogh.Client.Pages.IndexChido",
         "AssemblyName": "BancoGogh.Client",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "BancoGogh.Client.Pages.SolicitudVacaciones"
+            "TagName": "BancoGogh.Client.Pages.IndexChido"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "BancoGogh.Client.Pages.SolicitudVacaciones",
+          "Common.TypeName": "BancoGogh.Client.Pages.IndexChido",
           "Common.TypeNamespace": "BancoGogh.Client.Pages",
-          "Common.TypeNameIdentifier": "SolicitudVacaciones",
+          "Common.TypeNameIdentifier": "IndexChido",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -637,6 +600,102 @@
           "Common.TypeName": "BancoGogh.Client.Pages.UsuarioIndex",
           "Common.TypeNamespace": "BancoGogh.Client.Pages",
           "Common.TypeNameIdentifier": "UsuarioIndex",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -15506608,
+        "Kind": "Components.Component",
+        "Name": "BancoGogh.Client.Pages.RegistroUsuario",
+        "AssemblyName": "BancoGogh.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "RegistroUsuario"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "Id",
+              "Common.GloballyQualifiedTypeName": "global::System.Int32"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BancoGogh.Client.Pages.RegistroUsuario",
+          "Common.TypeNamespace": "BancoGogh.Client.Pages",
+          "Common.TypeNameIdentifier": "RegistroUsuario"
+        }
+      },
+      {
+        "HashCode": 1497982368,
+        "Kind": "Components.Component",
+        "Name": "BancoGogh.Client.Pages.RegistroUsuario",
+        "AssemblyName": "BancoGogh.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BancoGogh.Client.Pages.RegistroUsuario"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "Id",
+              "Common.GloballyQualifiedTypeName": "global::System.Int32"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BancoGogh.Client.Pages.RegistroUsuario",
+          "Common.TypeNamespace": "BancoGogh.Client.Pages",
+          "Common.TypeNameIdentifier": "RegistroUsuario",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -687500503,
+        "Kind": "Components.Component",
+        "Name": "BancoGogh.Client.Pages.Login",
+        "AssemblyName": "BancoGogh.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BancoGogh.Client.Pages.Login",
+          "Common.TypeNamespace": "BancoGogh.Client.Pages",
+          "Common.TypeNameIdentifier": "Login"
+        }
+      },
+      {
+        "HashCode": -1474029380,
+        "Kind": "Components.Component",
+        "Name": "BancoGogh.Client.Pages.Login",
+        "AssemblyName": "BancoGogh.Client",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "BancoGogh.Client.Pages.Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "BancoGogh.Client.Pages.Login",
+          "Common.TypeNamespace": "BancoGogh.Client.Pages",
+          "Common.TypeNameIdentifier": "Login",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
