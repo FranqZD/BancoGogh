@@ -17,10 +17,10 @@ public  class Prestamo
 
     public string FecAprobacionPrestamo { get; set; } = null!;
 
-    public int IdUsuario { get; set; }
+    public int IdUsuario { get; set; } = 0;
 
     public int Plazos { get; set; }
 
-    public int IdEmpleado { get; set; }
+    public int IdEmpleado { get; set; } = 0;
     
 }

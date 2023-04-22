@@ -198,15 +198,15 @@
       "mscorlib.dll": "sha256-qqpKd+W+AFb6UxudEYEKzrz7ma81p5LrWUwPBVvHV4U=",
       "netstandard.dll": "sha256-OYYuPT3JUknj4LdYIa58zF7kDB3tCnLzjCSuhEjtKXM=",
       "System.Private.CoreLib.dll": "sha256-EVS7zPxPV\/41g2mzPwdXtwiigWxI\/SeAHme1IgyD6tc=",
-      "BancoGogh.Shared.dll": "sha256-06l5nzPZ395i9Ma486YTq+Wlg+Z2rUIS3pYd7LlFPKA=",
-      "BancoGogh.Client.dll": "sha256-qneZDzyUhPueft5uXTz45y4F7JgUItzY\/2VKGYPypOM="
+      "BancoGogh.Shared.dll": "sha256-TOWuurN+lPoJulifX5v72ACrGepFjku3n153gWRc2o8=",
+      "BancoGogh.Client.dll": "sha256-Efy+BkPL7wYhEcT0W828NmjcIAw+30q66AOltEPkZzU="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "BancoGogh.Shared.pdb": "sha256-OmgZ6XBza6isx1dV79k9J0G0WeXLi+7tcyNakRCcrJY=",
-      "BancoGogh.Client.pdb": "sha256-0Y\/g5m4ASKfU82XRPdV1YI3A+lsN3uikPZKMkwAtJdI="
+      "BancoGogh.Shared.pdb": "sha256-hf8ozhpURGVK6viIHzpJyBxSThitSwwdD6jwJxpn6hM=",
+      "BancoGogh.Client.pdb": "sha256-qHXWZVhxWY99YkzXICRIL5K7IlpEax8Rvf\/oHZfYSSc="
     },
     "runtime": {
       "dotnet.7.0.5.lgpv30oqeq.js": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",
