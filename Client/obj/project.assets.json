@@ -1827,19 +1827,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC\\.nuget\\packages\\": {}
+    "C:\\Users\\franc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Client\\BancoGogh.Client.csproj",
+      "projectUniqueName": "C:\\Users\\franc\\BancoGogh\\Client\\BancoGogh.Client.csproj",
       "projectName": "BancoGogh.Client",
-      "projectPath": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Client\\BancoGogh.Client.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Client\\obj\\",
+      "projectPath": "C:\\Users\\franc\\BancoGogh\\Client\\BancoGogh.Client.csproj",
+      "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\franc\\BancoGogh\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -1851,8 +1851,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Shared\\BancoGogh.Shared.csproj": {
-              "projectPath": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Shared\\BancoGogh.Shared.csproj"
+            "C:\\Users\\franc\\BancoGogh\\Shared\\BancoGogh.Shared.csproj": {
+              "projectPath": "C:\\Users\\franc\\BancoGogh\\Shared\\BancoGogh.Shared.csproj"
             }
           }
         }
@@ -1891,7 +1891,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[7.0.5, 7.0.5]"
+            "version": "[7.0.4, 7.0.4]"
           }
         ],
         "frameworkReferences": {
@@ -1899,7 +1899,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

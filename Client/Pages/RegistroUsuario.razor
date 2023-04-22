@@ -28,10 +28,13 @@ Bienvenido
     La fecha de nacimiento no puede ser antes de 1962.
     </div>
   </div> *@
+
+  
 <EditForm Model="@usuario" OnValidSubmit="Save">
   <div class="mb-3 ">
     <label for="curp">CURP:</label>
-    <InputText @bind-Value="usuario.CurpUsr" class="form-control" required />
+    <InputText @bind-Value="usuario.CurpUsr" class="form-control" required 
+    />
   </div>
 
   <div class="mb-3 ">
