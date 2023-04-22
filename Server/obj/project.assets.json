@@ -4774,19 +4774,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\franc\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\franc\\BancoGogh\\Server\\BancoGogh.Server.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Server\\BancoGogh.Server.csproj",
       "projectName": "BancoGogh.Server",
-      "projectPath": "C:\\Users\\franc\\BancoGogh\\Server\\BancoGogh.Server.csproj",
-      "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\franc\\BancoGogh\\Server\\obj\\",
+      "projectPath": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Server\\BancoGogh.Server.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -4798,11 +4798,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\franc\\BancoGogh\\Client\\BancoGogh.Client.csproj": {
-              "projectPath": "C:\\Users\\franc\\BancoGogh\\Client\\BancoGogh.Client.csproj"
+            "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Client\\BancoGogh.Client.csproj": {
+              "projectPath": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Client\\BancoGogh.Client.csproj"
             },
-            "C:\\Users\\franc\\BancoGogh\\Shared\\BancoGogh.Shared.csproj": {
-              "projectPath": "C:\\Users\\franc\\BancoGogh\\Shared\\BancoGogh.Shared.csproj"
+            "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Shared\\BancoGogh.Shared.csproj": {
+              "projectPath": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Shared\\BancoGogh.Shared.csproj"
             }
           }
         }
@@ -4867,7 +4867,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
