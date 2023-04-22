@@ -88,6 +88,7 @@ public class BancoController : ControllerBase
             return BadRequest(new { message = "CURP o contraseña incorrectos" });
         }
 
+
         return Ok(cuenta);
     }
 
