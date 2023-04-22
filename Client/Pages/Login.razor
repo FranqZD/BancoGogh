@@ -95,7 +95,7 @@
 </div>
 
 @code {
-    private Cuenta Cuenta {get;set;} = new();
+private Cuenta Cuenta {get;set;} = new();
 private async Task HandleSubmit()
 {
   Console.WriteLine(Cuenta .nickname);
@@ -104,9 +104,15 @@ private async Task HandleSubmit()
     var response = await http.PostAsJsonAsync("api/Banco/GetById", Cuenta);
     if (response.IsSuccessStatusCode)
     {
-        Cuenta = await response.Content.ReadFromJsonAsync<Cuenta>();
-        Console.WriteLine(Cuenta);
-        NavigationManager.NavigateTo("/rifa");
+        var cuenta = await response.Content.ReadFromJsonAsync<Cuenta>();
+        Console.WriteLine(cuenta.Id_Usuario);
+
+        if(cuenta.Id_Usuario != 0){
+            NavigationManager.NavigateTo("/rifa");
+        }else{
+          NavigationManager.NavigateTo("/counter");
+        }
+        
     }
     else
     {
