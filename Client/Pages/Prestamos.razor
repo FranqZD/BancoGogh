@@ -1,54 +1,58 @@
-@page "/Prestamos"
+@page "/Prestamos/{Id:int}"
+@using BancoGogh.Shared.Models
+@inject HttpClient http
 
 <PageTitle>Prestamos</PageTitle>
 
-    <h1>Prestamos</h1>
-<body>
+<h1>Prestamos</h1>
+
 <div class="container">
     <div class="row">
-      <div class="col-12">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Folio</th>
-              <th>Fecha de solicitud</th>
-              <th>Fecha de aprobación</th>
-              <th>Pago por mes</th>
-              <th>Fecha de último pago recibido</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>001</td>
-              <td>01/01/2022</td>
-              <td>05/01/2022</td>
-              <td>$1,000.00</td>
-              <td>01/06/2022</td>
-              <td>
-              </td>
-            </tr>
-            <tr>
-              <td>002</td>
-              <td>03/01/2022</td>
-              <td>10/01/2022</td>
-              <td>$1,500.00</td>
-              <td>03/06/2022</td>
-              <td>
-              </td>
-            </tr>
-            <tr>
-              <td>002</td>
-              <td>03/01/2022</td>
-              <td>10/01/2022</td>
-              <td>$1,500.00</td>
-              <td>03/06/2022</td>
-              <td>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Folio</th>
+                        <th>Fecha de solicitud</th>
+                        <th>Fecha de aprobación</th>
+                        <th>Pago por mes</th>
+                        <th>Fecha de último pago recibido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var prestamo in prestamos)
+                    {
+                        <tr>
+                            <td>@prestamo.FolioPrestamo</td>
+                            <td>@prestamo.FecSolicitudPrestamo</td>
+                            <td>@prestamo.FecAprobacionPrestamo</td>
+                            <td>$@prestamo.CantidadPrestamo/@prestamo.Plazos</td>
+                            <td>@prestamo.FecUltimoPagoPrestamo</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-  </body>
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    
+    private List<Prestamo> prestamos = new List<Prestamo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var response = await http.GetAsync($"api/Banco/PrestamosById/{Id}");
+        if (response.IsSuccessStatusCode)
+        {
+            prestamos = await response.Content.ReadFromJsonAsync<List<Prestamo>>();
+            Console.WriteLine(prestamos);
+        }
+        else
+        {
+            Console.WriteLine("No se pudo recuperar la lista de préstamos.");
+        }
+    }
+}

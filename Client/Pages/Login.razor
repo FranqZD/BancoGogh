@@ -98,8 +98,7 @@
 private Cuenta Cuenta {get;set;} = new();
 private async Task HandleSubmit()
 {
-  Console.WriteLine(Cuenta .nickname);
-  Console.WriteLine(Cuenta .password);
+
    
     var response = await http.PostAsJsonAsync("api/Banco/GetById", Cuenta);
     if (response.IsSuccessStatusCode)
@@ -108,9 +107,9 @@ private async Task HandleSubmit()
         Console.WriteLine(cuenta.Id_Usuario);
 
         if(cuenta.Id_Usuario != 0){
-            NavigationManager.NavigateTo("/UsuarioIndex");
+            NavigationManager.NavigateTo("/UsuarioIndex/"+cuenta.Id_Cuenta);
         }else{
-          NavigationManager.NavigateTo("/GerenteIndex");
+          NavigationManager.NavigateTo("/GerenteIndex/"+cuenta.Id_Cuenta);
         }
         
     }

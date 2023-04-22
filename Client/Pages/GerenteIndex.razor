@@ -1,10 +1,11 @@
 @page  "/GerenteIndex"
+@page  "/GerenteIndex/{id_cuenta:int}"
 <head>
 
 	<title>Bienvenido a tu perfil</title>
 	<style>
 		body {
-			background-image: url('https://francoaldrete.com/ropainv.jpg');
+		
 			background-size: auto;
 			background-position: center center;
 			font-family: Arial, sans-serif;
@@ -71,5 +72,9 @@
 </div>
 
 
-
+@code {
+    [Parameter]
+    public int id_cuenta { get; set; }
+    
+  	}
 
