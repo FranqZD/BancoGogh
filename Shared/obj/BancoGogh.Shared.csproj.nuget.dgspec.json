@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Shared\\BancoGogh.Shared.csproj": {}
+    "C:\\Users\\franc\\BancoGogh\\Shared\\BancoGogh.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Shared\\BancoGogh.Shared.csproj": {
+    "C:\\Users\\franc\\BancoGogh\\Shared\\BancoGogh.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Shared\\BancoGogh.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\BancoGogh\\Shared\\BancoGogh.Shared.csproj",
         "projectName": "BancoGogh.Shared",
-        "projectPath": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Shared\\BancoGogh.Shared.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Documents\\BancoGogh\\BancoGogh\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\franc\\BancoGogh\\Shared\\BancoGogh.Shared.csproj",
+        "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\franc\\BancoGogh\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
