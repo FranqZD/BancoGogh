@@ -108,9 +108,9 @@ private async Task HandleSubmit()
         Console.WriteLine(cuenta.Id_Usuario);
 
         if(cuenta.Id_Usuario != 0){
-            NavigationManager.NavigateTo("/rifa");
+            NavigationManager.NavigateTo("/UsuarioIndex");
         }else{
-          NavigationManager.NavigateTo("/counter");
+          NavigationManager.NavigateTo("/GerenteIndex");
         }
         
     }
