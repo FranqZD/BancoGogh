@@ -24,7 +24,10 @@ public  class Prestamo
     [RegularExpression(@"^\d{4}-\d{2}-\d{2}$", ErrorMessage = "El campo Fecha de aprobación debe ser una fecha con formato yyyy-mm-dd.")]
     public string FecAprobacionPrestamo { get; set; } = null!;
 
+    public string FecUltimoPagoPrestamo {get;set;} = "22/04/2023";
+
     public int IdUsuario { get; set; }
+
 
     [Required(ErrorMessage = "El campo Plazos es obligatorio.")]
     public int Plazos { get; set; }

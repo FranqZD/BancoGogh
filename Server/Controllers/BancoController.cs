@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using BancoGogh.Server.Context;
 using BancoGogh.Shared.Models;
+using System.Collections.Generic;
 
 namespace BancoGogh.Server.Controllers;
 
@@ -85,10 +86,8 @@ public class BancoController : ControllerBase
 
         if (cuenta == null)
         {
-            return BadRequest(new { message = "CURP o contraseña incorrectos" });
+            return BadRequest(new { message = "Usuario o contraseña incorrectos" });
         }
-
-
         return Ok(cuenta);
     }
 
@@ -118,8 +117,18 @@ public class BancoController : ControllerBase
             return Ok(model);
         }
 
+    [HttpGet("PrestamosById/{id}")]
+    public IActionResult PrestamosById(int id)
+    {
+        var prestamos = _ctx.Prestamos.Where(p => p.IdUsuario == id).ToList();
+        return Ok(prestamos);
     }
 
-    
+    }
+
+
+
+
+
 
 
