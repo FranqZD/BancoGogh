@@ -22,7 +22,7 @@ namespace BancoGogh.Server.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BancoGogh.Server.Models.CategoriaDelPrestamo", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.CategoriaDelPrestamo", b =>
                 {
                     b.Property<int>("IdCategoria")
                         .ValueGeneratedOnAdd()
@@ -38,7 +38,7 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("CategoriaDelPrestamo");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Cuenta", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Cuenta", b =>
                 {
                     b.Property<int>("Id_Cuenta")
                         .ValueGeneratedOnAdd()
@@ -46,8 +46,15 @@ namespace BancoGogh.Server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id_Cuenta"));
 
-                    b.Property<int>("Id_Datos")
+                    b.Property<int>("Id_Empleado")
                         .HasColumnType("int");
+
+                    b.Property<int>("Id_Usuario")
+                        .HasColumnType("int");
+
+                    b.Property<string>("nickname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("password")
                         .IsRequired()
@@ -58,13 +65,13 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("Cuentas");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.DatosPersonales", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Empleado", b =>
                 {
-                    b.Property<int>("IdPersona")
+                    b.Property<int>("IdEmpleado")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPersona"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdEmpleado"));
 
                     b.Property<string>("ApMPersona")
                         .IsRequired()
@@ -74,57 +81,21 @@ namespace BancoGogh.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Empleado")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EmpleadoNavigationIdEmpleado")
-                        .HasColumnType("int");
-
                     b.Property<int>("EstatusPrestamo")
-                        .HasColumnType("int");
-
-                    b.Property<int>("EstatusPrestamoNavigationIdEstado")
                         .HasColumnType("int");
 
                     b.Property<string>("FeNacPersona")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("NombrePersona")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Tipo")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Usuarios")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UsuariosNavigationIdUsuario")
-                        .HasColumnType("int");
-
-                    b.HasKey("IdPersona");
-
-                    b.HasIndex("EmpleadoNavigationIdEmpleado");
-
-                    b.HasIndex("EstatusPrestamoNavigationIdEstado");
-
-                    b.HasIndex("UsuariosNavigationIdUsuario");
-
-                    b.ToTable("DatosPersonales");
-                });
-
-            modelBuilder.Entity("BancoGogh.Server.Models.Empleado", b =>
-                {
-                    b.Property<int>("IdEmpleado")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdEmpleado"));
-
                     b.Property<string>("FecInicio")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FolioPrestamo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NombrePersona")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -148,7 +119,7 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("Empleados");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Estatus", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Estatus", b =>
                 {
                     b.Property<int>("IdEstado")
                         .ValueGeneratedOnAdd()
@@ -165,7 +136,7 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("Estatuses");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Historial", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Historial", b =>
                 {
                     b.Property<int>("NoHistorial")
                         .ValueGeneratedOnAdd()
@@ -203,7 +174,7 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("Historials");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Plazo", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Plazo", b =>
                 {
                     b.Property<int>("IdPlazo")
                         .ValueGeneratedOnAdd()
@@ -222,7 +193,7 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("Plazos");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Prestamo", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Prestamo", b =>
                 {
                     b.Property<int>("FolioPrestamo")
                         .ValueGeneratedOnAdd()
@@ -265,7 +236,7 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("Prestamos");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Puesto", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Puesto", b =>
                 {
                     b.Property<int>("IdPuesto")
                         .ValueGeneratedOnAdd()
@@ -281,7 +252,7 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("Puestos");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Rifa", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Rifa", b =>
                 {
                     b.Property<int>("NoBoleto")
                         .ValueGeneratedOnAdd()
@@ -301,7 +272,7 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("Rifas");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Usuario", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Usuario", b =>
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
@@ -309,7 +280,11 @@ namespace BancoGogh.Server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdUsuario"));
 
-                    b.Property<string>("Contrasenia")
+                    b.Property<string>("ApMPersona")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ApPPersona")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -317,8 +292,22 @@ namespace BancoGogh.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("EstatusPrestamo")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FeNacPersona")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FolioPrestamo")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdHistorial")
                         .HasColumnType("int");
+
+                    b.Property<string>("NombrePersona")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("SaldoUsr")
                         .HasColumnType("float");
@@ -328,36 +317,9 @@ namespace BancoGogh.Server.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.DatosPersonales", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Empleado", b =>
                 {
-                    b.HasOne("BancoGogh.Server.Models.Empleado", "EmpleadoNavigation")
-                        .WithMany()
-                        .HasForeignKey("EmpleadoNavigationIdEmpleado")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BancoGogh.Server.Models.Estatus", "EstatusPrestamoNavigation")
-                        .WithMany()
-                        .HasForeignKey("EstatusPrestamoNavigationIdEstado")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BancoGogh.Server.Models.Usuario", "UsuariosNavigation")
-                        .WithMany()
-                        .HasForeignKey("UsuariosNavigationIdUsuario")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("EmpleadoNavigation");
-
-                    b.Navigation("EstatusPrestamoNavigation");
-
-                    b.Navigation("UsuariosNavigation");
-                });
-
-            modelBuilder.Entity("BancoGogh.Server.Models.Empleado", b =>
-                {
-                    b.HasOne("BancoGogh.Server.Models.Puesto", "PuestoNavigation")
+                    b.HasOne("BancoGogh.Shared.Models.Puesto", "PuestoNavigation")
                         .WithMany("Empleados")
                         .HasForeignKey("PuestoNavigationIdPuesto")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -366,40 +328,40 @@ namespace BancoGogh.Server.Migrations
                     b.Navigation("PuestoNavigation");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Historial", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Historial", b =>
                 {
-                    b.HasOne("BancoGogh.Server.Models.CategoriaDelPrestamo", null)
+                    b.HasOne("BancoGogh.Shared.Models.CategoriaDelPrestamo", null)
                         .WithMany("Historials")
                         .HasForeignKey("CategoriaDelPrestamoIdCategoria");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Prestamo", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Prestamo", b =>
                 {
-                    b.HasOne("BancoGogh.Server.Models.Empleado", null)
+                    b.HasOne("BancoGogh.Shared.Models.Empleado", null)
                         .WithMany("Prestamos")
                         .HasForeignKey("EmpleadoIdEmpleado");
 
-                    b.HasOne("BancoGogh.Server.Models.Plazo", null)
+                    b.HasOne("BancoGogh.Shared.Models.Plazo", null)
                         .WithMany("Prestamos")
                         .HasForeignKey("PlazoIdPlazo");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.CategoriaDelPrestamo", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.CategoriaDelPrestamo", b =>
                 {
                     b.Navigation("Historials");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Empleado", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Empleado", b =>
                 {
                     b.Navigation("Prestamos");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Plazo", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Plazo", b =>
                 {
                     b.Navigation("Prestamos");
                 });
 
-            modelBuilder.Entity("BancoGogh.Server.Models.Puesto", b =>
+            modelBuilder.Entity("BancoGogh.Shared.Models.Puesto", b =>
                 {
                     b.Navigation("Empleados");
                 });

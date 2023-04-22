@@ -77,14 +77,14 @@
                     Login
                 </div>
                 <div class="card-body">
-                    <EditForm Model="@usuario" OnValidSubmit="@HandleSubmit">
+                    <EditForm Model="@Cuenta" OnValidSubmit="@HandleSubmit">
                         <div class="form-group mb-3">
                             <label for="username">Username</label>
-                            <InputText type="text" class="form-control" id="CurpUsr" placeholder="Enter username" @bind-Value="@usuario.CurpUsr" required />
+                            <InputText type="text" class="form-control" id="CurpUsr" placeholder="Enter username" @bind-Value="@Cuenta.nickname" required />
                         </div>
                         <div class="form-group mb-3">
                             <label for="password">Password</label>
-                            <InputText type="password" class="form-control" id="Contrasenia" placeholder="Enter password" @bind-Value="@usuario.Contrasenia" required />
+                            <InputText type="password" class="form-control" id="Contrasenia" placeholder="Enter password" @bind-Value="@Cuenta.password" required />
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </EditForm>
@@ -95,16 +95,17 @@
 </div>
 
 @code {
-    private Usuario usuario {get;set;} = new();
+    private Cuenta Cuenta {get;set;} = new();
 private async Task HandleSubmit()
 {
-  Console.WriteLine(usuario.CurpUsr);
-  Console.WriteLine(usuario.Contrasenia);
+  Console.WriteLine(Cuenta .nickname);
+  Console.WriteLine(Cuenta .password);
    
-    var response = await http.PostAsJsonAsync("api/Banco/GetById", usuario);
+    var response = await http.PostAsJsonAsync("api/Banco/GetById", Cuenta);
     if (response.IsSuccessStatusCode)
     {
-        usuario = await response.Content.ReadFromJsonAsync<Usuario>();
+        Cuenta = await response.Content.ReadFromJsonAsync<Cuenta>();
+        Console.WriteLine(Cuenta);
         NavigationManager.NavigateTo("/rifa");
     }
     else
