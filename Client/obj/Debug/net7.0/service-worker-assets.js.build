@@ -5,7 +5,7 @@
       "url": "css\/app.css"
     },
     {
-      "hash": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7\/p4nS6D\/0=",
+      "hash": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
       "url": "css\/bootstrap\/bootstrap.min.css"
     },
     {
@@ -837,8 +837,8 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",
-      "url": "_framework\/dotnet.7.0.5.lgpv30oqeq.js"
+      "hash": "sha256-2jNLve8W0sST0LAebgAc1IwSnGhkbjOKO8QPWWiJssI=",
+      "url": "_framework\/dotnet.7.0.0.cj4dtwq1hz.js"
     },
     {
       "hash": "sha256-NFPG+mWpX1lpilZGC5d9W\/8+Yjx+6oW2ujo2u+HYW1Q=",
@@ -865,19 +865,19 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-06l5nzPZ395i9Ma486YTq+Wlg+Z2rUIS3pYd7LlFPKA=",
+      "hash": "sha256-IxIFCOdSzHiFYYGwGXPe1mmGbEy1q43fobcleDq\/hj8=",
       "url": "_framework\/BancoGogh.Shared.dll"
     },
     {
-      "hash": "sha256-OmgZ6XBza6isx1dV79k9J0G0WeXLi+7tcyNakRCcrJY=",
+      "hash": "sha256-vnzEI5Y+dt5XNZ7l1sL4cWzKBrrX10LcCyRHiatF\/eM=",
       "url": "_framework\/BancoGogh.Shared.pdb"
     },
     {
-      "hash": "sha256-hg1iiiY\/ShGymKBViye+mFMF3NhANN\/XY01napW6pik=",
+      "hash": "sha256-rfQwXqrWeXx3SGDyGHGPXDClqe3whvK1esJQMFbsuCg=",
       "url": "_framework\/BancoGogh.Client.dll"
     },
     {
-      "hash": "sha256-pilfPwpN0gMhJMl5LkYfiU9Cv5n9rWxyItVSTqYJVtE=",
+      "hash": "sha256-wtqWjsHZwzhnKdPn4jbcfMK1psH0BDFYVe4YqSOopIE=",
       "url": "_framework\/BancoGogh.Client.pdb"
     },
     {
@@ -885,9 +885,9 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-lfKI5jvsBNAMEH\/8KoWtDWYRJ+i71sgVfYxPsgTyfFA=",
+      "hash": "sha256-3p1TMXNdwFkfkPcrewnj3+TScwYmaVl+qmFuO7BCe1M=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "i0HvvXVQ"
+  "version": "ePupacny"
 };

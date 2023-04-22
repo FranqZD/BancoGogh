@@ -21,6 +21,29 @@ public class BancoController : ControllerBase
     //aqui se obtiene la lista de usuarios
 
     [HttpPost]
+    public IActionResult AddCuenta(Cuenta cuenta)
+    {
+        var status = new Status();
+        if (!ModelState.IsValid)
+        {
+            status.StatusCode = 0;
+            status.Message = "Please pass the valid data";
+            return Ok(status);
+        }
+        try
+        {
+                _ctx.Cuentas.Add(cuenta);
+                _ctx.SaveChanges();
+        }
+        catch (Exception ex)
+        {
+            status.StatusCode = 0;
+            status.Message = "Server error";
+        }
+        return Ok(status);
+    }
+
+    [HttpPost]
     public IActionResult AddUpdate(Usuario usuario)
     {
         var status = new Status();
