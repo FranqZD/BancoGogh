@@ -20,5 +20,4 @@ public  class CategoriaDelPrestamo
     [RegularExpression(@"^\d+\.\d{0,2}$", ErrorMessage = "El campo Cantidad debe ser un número con máximo 2 decimales.")]
     public double Cantidad { get; set; }
 
-    public virtual ICollection<Historial> Historials { get; } = new List<Historial>();
 }

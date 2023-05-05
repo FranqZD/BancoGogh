@@ -12,10 +12,7 @@ public class Cuenta
 
     [Key]
     public int Id_Cuenta{get; set;}
-    [Required,
-    StringLength(10, ErrorMessage = "El campo Nombre debe tener máximo 10 caracteres."),
-    RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "El campo Nombre debe ser alfanumérico."),
-    MinLength(2, ErrorMessage = "El campo Nombre debe tener mínimo 2 caracteres.")]
+    
     public string nickname {get;set;}
 
     [Required]

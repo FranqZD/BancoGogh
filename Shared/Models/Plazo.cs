@@ -19,5 +19,5 @@ public  class Plazo
     [Range(1, 100, ErrorMessage = "El campo Intereses debe ser mayor a 0")]
     public double Intereses { get; set; }
 
-    public virtual ICollection<Prestamo> Prestamos { get; } = new List<Prestamo>();
+
 }

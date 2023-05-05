@@ -9,93 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = BancoGogh.Client
 build_property.RootNamespace = BancoGogh.Client
-build_property.ProjectDir = c:\Users\SGame\BancoGogh\Client\
+build_property.ProjectDir = C:\Users\SGame\BancoGogh\Client\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\SGame\BancoGogh\Client
+build_property.MSBuildProjectDirectory = C:\Users\SGame\BancoGogh\Client
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/SGame/BancoGogh/Client/App.razor]
+[C:/Users/SGame/BancoGogh/Client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/Comportamiento.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/Comportamiento.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9ydGFtaWVudG8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/Counter.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/FetchData.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/GerenteIndex.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/GerenteIndex.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VyZW50ZUluZGV4LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/Graficas.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/Graficas.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JhZmljYXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/IndexChido.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/IndexChido.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXhDaGlkby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/Login.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/Prestamos.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/Prestamos.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJlc3RhbW9zLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/RegistroEmpelado.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/RegistroEmpelado.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9FbXBlbGFkby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/RegistroUsuario.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/RegistroUsuario.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0cm9Vc3VhcmlvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/ReportesGerenteGenerar.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/ReportesGerenteGenerar.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0ZXNHZXJlbnRlR2VuZXJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/ReportesGerenteVer.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/ReportesGerenteVer.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVwb3J0ZXNHZXJlbnRlVmVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/Rifa.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/Rifa.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmlmYS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/SolicitudPrestamo.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/SolicitudPrestamo.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29saWNpdHVkUHJlc3RhbW8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/SolicitudVacaciones.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/SolicitudVacaciones.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU29saWNpdHVkVmFjYWNpb25lcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Pages/UsuarioIndex.razor]
+[C:/Users/SGame/BancoGogh/Client/Pages/UsuarioIndex.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb0luZGV4LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Shared/SurveyPrompt.razor]
+[C:/Users/SGame/BancoGogh/Client/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/_Imports.razor]
+[C:/Users/SGame/BancoGogh/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/SGame/BancoGogh/Client/Shared/MainLayout.razor]
+[C:/Users/SGame/BancoGogh/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-vqfvt5x9h5
 
-[c:/Users/SGame/BancoGogh/Client/Shared/NavMenu.razor]
+[C:/Users/SGame/BancoGogh/Client/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-igkrynso1a

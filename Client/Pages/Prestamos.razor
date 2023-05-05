@@ -1,6 +1,8 @@
+
 @page "/Prestamos/{Id:int}"
 @using BancoGogh.Shared.Models
 @inject HttpClient http
+
 
 <PageTitle>Prestamos</PageTitle>
 
@@ -20,16 +22,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var prestamo in prestamos)
-                    {
-                        <tr>
-                            <td>@prestamo.FolioPrestamo</td>
-                            <td>@prestamo.FecSolicitudPrestamo</td>
-                            <td>@prestamo.FecAprobacionPrestamo</td>
-                            <td>$@prestamo.CantidadPrestamo/@prestamo.Plazos</td>
-                            <td>@prestamo.FecUltimoPagoPrestamo</td>
-                        </tr>
-                    }
+                @foreach (var prestamo in prestamos)
+                {
+                    <tr>
+                        <td>@prestamo.FolioPrestamo</td>
+                        <td>@prestamo.FecSolicitudPrestamo</td>
+                        <td>@prestamo.FecAprobacionPrestamo</td>
+                        <td>$@prestamo.CantidadPrestamo/@prestamo.Plazos</td>
+                        <td>@prestamo.FecUltimoPagoPrestamo</td>
+                    </tr>
+                }
                 </tbody>
             </table>
         </div>
@@ -38,17 +40,17 @@
 
 @code {
     [Parameter]
-    public int Id { get; set; }
+    public  int Id { get; set; }
     
-    private List<Prestamo> prestamos = new List<Prestamo>();
-
+    private List<Prestamo> prestamos= new List<Prestamo>();
     protected override async Task OnInitializedAsync()
     {
-        var response = await http.GetAsync($"api/Banco/PrestamosById/{Id}");
+        Console.WriteLine("Jaja simon "+Id);
+    	var response = await http.PostAsJsonAsync<int>($"api/Banco/PrestamosById/{Id}",0);
         if (response.IsSuccessStatusCode)
         {
             prestamos = await response.Content.ReadFromJsonAsync<List<Prestamo>>();
-            Console.WriteLine(prestamos);
+            Console.WriteLine("mm"+prestamos);
         }
         else
         {

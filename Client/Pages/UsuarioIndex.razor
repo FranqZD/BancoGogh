@@ -1,3 +1,4 @@
+
 @page  "/UsuarioIndex"
 @page  "/UsuarioIndex/{id_cuenta:int}"
 
@@ -5,7 +6,6 @@
 	<title>Bienvenido a tu perfil</title>
 	<style>
 		body {
-		
 			background-size: auto;
 			background-position: center center;
 			font-family: Arial, sans-serif;
@@ -66,7 +66,9 @@
 		</header>
 		<main>
 			<p>Hola, <strong>Felipe</strong>. ¡Bienvenido a tu perfil!</p>
-			<button>Comenzar</button>
+			<!-- Buttons with onclick linked to code function -->
+			<button onclick="location.href = 'solicitud-prestamo/@id_cuenta'">Solicitud de prestamo</button>
+			<button onclick="location.href = 'Prestamos/@id_cuenta'">Ver prestamos</button>
 		</main>
 	</main>
 </div>
@@ -74,9 +76,4 @@
 @code {
     [Parameter]
     public int id_cuenta { get; set; }
-    
-  	}
-
-
-
-
+}

@@ -44,9 +44,7 @@ public  class Empleado
 
     public int Puesto { get; set; }
 
-    public virtual ICollection<Prestamo> Prestamos { get; } = new List<Prestamo>();
 
-    public virtual Puesto PuestoNavigation { get; set; } = null!;
     public int EstatusPrestamo { get; set; }
 
     public int FolioPrestamo { get; set; }

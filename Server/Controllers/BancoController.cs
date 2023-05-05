@@ -77,14 +77,15 @@ public class BancoController : ControllerBase
     public IActionResult AddPrestamo(Prestamo prestamo)
     {
         var status = new Status();
+        try
+        {
         if (!ModelState.IsValid)
         {
             status.StatusCode = 0;
             status.Message = "Please pass the valid data";
             return Ok(status);
         }
-        try
-        {
+
             if (prestamo.FolioPrestamo == 0)
                 _ctx.Prestamos.Add(prestamo);
             else
@@ -140,12 +141,14 @@ public class BancoController : ControllerBase
             return Ok(model);
         }
 
-    [HttpGet("PrestamosById/{id}")]
-    public IActionResult PrestamosById(int id)
-    {
-        var prestamos = _ctx.Prestamos.Where(p => p.IdUsuario == id).ToList();
-        return Ok(prestamos);
-    }
+
+[HttpPost("{id}")]
+public IActionResult PrestamosById(int id)
+{
+    Console.WriteLine("EYEYEYEY");
+    List<Prestamo>prestamos = _ctx.Prestamos.Where(p => p.IdUsuario == id).ToList();
+    return Ok(prestamos);
+}
 
     }
 
